@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>index</title>
+</head>
+
+<body>
+    <table width="100%" height="100%">
+        <tr>
+            <td width="25%">
+                &nbsp;
+            </td>
+            <td>
+                <h1><a href="/" >HeaderPicutre</a></h1>
+                <table width="100%">
+                    <tr>
+                        <td colspan="3">
+                        </td>
+                        <td>
+                            <button><%=total %></button>
+                        </td>
+                    </tr>
+                    <tr id="test">
+                        <% if (product) {%>
+                        <td>
+                            <img src="../assets/<%=product.imageName%>" width="100%">
+                            </td>
+                            <td>
+                                <table>
+                                    <tr>
+                                        <td><h2><%=product.productName%></h2></td>
+                                    </tr>
+                                    <tr>
+                                        <td><p><%=product.description%></p></td>
+                                    </tr>
+                                    <tr>
+                                        <td><form action="" method="POST">
+                                            <button type="submit">Zum Warenkorb hinzufügen</button>
+                                        </form></td>
+                                    </tr>
+                                </table>
+                            </td>
+                        <%}%>
+                    </tr>
+                    
+                    </script>
+                </table>
+            </td>
+            <td width="25%">
+                &nbsp;
+            </td>
+
+        </tr>
+    </table>
+</body>
+
+</html>
