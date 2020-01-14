@@ -41,6 +41,7 @@ export class ShoppingCart {
 
     decrementProductAmount(product: any){
         const productToIncrement = this.products.find(p => product.id == product.id);
+        this.total -= product.specialOffer;
         
         if (productToIncrement.amount-- == 0){
             this.removeFromCart(product);
