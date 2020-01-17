@@ -6,9 +6,9 @@ Im Dateiexplorer kann man nachher beim Pfad
 ```cmd```
 eingeben und er öffnet sich das Terminal
 
-Für das starten Projektes müssen zuerst alle npm Packete installiert werden
+Für das starten Projektes müssen zuerst alle npm Packete installiert werden dies wird mit diesem Kommand gemacht
 
-```npm install```
+```npm install``` 
 
 Nachher kann mit 
 ```npm start``` 
