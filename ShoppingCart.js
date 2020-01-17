@@ -7,38 +7,52 @@ var ShoppingCart = /** @class */ (function () {
         this.products = new Array();
     }
     ShoppingCart.prototype.getTotal = function () {
+        this.calculateTotal();
         return this.total;
     };
-    ShoppingCart.prototype.addToTotal = function (price) {
-        this.total += price;
-    };
     ShoppingCart.prototype.addToCart = function (product) {
-        this.addToTotal(product.specialOffer);
-        product.amount = 1;
-        console.log(this.products.find(function (p) { return p.id === product.id; }));
         if (this.products.find(function (p) { return p.id === product.id; }) != undefined) {
             this.incrementProductAmount(product);
         }
         else {
-            console.log("niggers");
+            product.amount = 1;
             this.products.push(product);
         }
+        this.calculateTotal();
     };
     ShoppingCart.prototype.getCart = function () {
         return this;
     };
+    ShoppingCart.prototype.clearProducts = function () {
+        this.products = [];
+    };
+    ShoppingCart.prototype.calculateTotal = function () {
+        var _this = this;
+        this.total = 0;
+        this.products.forEach(function (p) {
+            _this.total += p.amount * p.specialOffer;
+        });
+        this.total.toFixed(2);
+    };
     ShoppingCart.prototype.removeFromCart = function (product) {
-        this.products.splice(product);
+        var index = this.products.findIndex(function (p) { return p.id == product.id; });
+        this.products.splice(index, 1);
     };
     ShoppingCart.prototype.incrementProductAmount = function (product) {
-        var productToIncrement = this.products.find(function (p) { return product.id == product.id; });
+        var productToIncrement = this.products.find(function (p) { return p.id == product.id; });
         productToIncrement.amount++;
+        this.total += product.specialOffer;
+        this.calculateTotal();
     };
     ShoppingCart.prototype.decrementProductAmount = function (product) {
-        var productToIncrement = this.products.find(function (p) { return product.id == product.id; });
-        if (productToIncrement.amount--) {
-            this.removeFromCart(product);
+        console.log(product.id);
+        var productToIncrement = this.products.find(function (p) { return p.id == product.id; });
+        this.total -= product.specialOffer;
+        console.log(productToIncrement.id);
+        if (productToIncrement.amount-- === 1) {
+            this.removeFromCart(productToIncrement);
         }
+        this.calculateTotal();
     };
     return ShoppingCart;
 }());

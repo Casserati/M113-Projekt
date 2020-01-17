@@ -5,6 +5,7 @@
   "main": "router.js",
   "dependencies": {
     "@types/node": "^13.1.4",
+    "alert-node": "^2.1.1",
     "cookie-parser": "^1.4.4",
     "ejs": "^3.0.1",
     "express": "^4.17.1",
@@ -16,6 +17,7 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "prestart": "tsc server.ts --resolveJsonModule",
     "start": "node server.js"
   },
   "author": "Francesco Casamassa",

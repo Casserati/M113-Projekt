@@ -12,13 +12,13 @@
                 &nbsp;
             </td>
             <td>
-                <h1>HeaderPicutre</h1>
+                <h1><a href="/" >HeaderPicutre</a></h1>
                 <table width="100%">
                     <tr>
                         <td colspan="3">
                         </td>
                         <td>
-                            <button>CHF 0.00</button>
+                            <button><%= Number.parseFloat(total).toFixed(2) %> CHF</button>
                         </td>
                     </tr>
                     <tr>
@@ -38,32 +38,38 @@
                                         Total
                                     </th>
                                 </tr>
+                                <% for (p of products) { %>
                                 <tr>
                                     <td>
-                                        Testproduct
+                                        <%= p.productName %>
                                     </td>
                                     <td>
-                                        CHF 1.30
+                                        CHF <%= p.specialOffer %>
                                     </td>
                                     <td>
+                                        <a href="/product/decrement/<%=p.id%>">
                                         <button type="button">
                                             -
-                                        </button>
-                                        123
+                                        </button></a>
+                                        <%= p.amount %>
+                                        <a href="/product/increment/<%=p.id%>">
                                         <button type="button">
                                             +
-                                        </button>
+                                        </button></a>
                                     </td>
                                     <td>
-                                        CHF 159.9‬0
+                                        <%= Number.parseFloat(p.amount * p.specialOffer).toFixed(2) %>
                                     </td>
                                 </tr>
+                                <% } %>
                             </table>
                         </td>
                     </tr>
                     <tr>
                         <td>
+                            <a href="/views/checkout">
                             <button type="submit">Checkout</button>
+                        </a>
                         </td>
                     </tr>
                 </table>
