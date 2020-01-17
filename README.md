@@ -17,3 +17,7 @@ Diese läuft auf http://localhost:8080/!
 
 ### Lizenz
 https://github.com/rollup/rollup/blob/master/LICENSE.md
+
+
+# Randinformation
+Ich entschuldige mich für mögliche Schädigung am Auge, denn mir ist selber bewusst, dass diese Webseite nicht besonders schön ist.
