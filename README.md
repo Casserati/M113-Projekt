@@ -10,7 +10,9 @@ Für das starten Projektes müssen zuerst alle npm Packete installiert werden
 
 ```npm install```
 
-Nachher kann mit ```npm start``` der Server gestartet werden. 
+Nachher kann mit 
+```npm start``` 
+der Server gestartet werden. 
 Diese läuft auf http://localhost:8080/!
 
 ### Lizenz
